@@ -56,8 +56,6 @@ The design language uses a **blue (`#03a4ed`) + red (`#ff695f`) on white** palet
 | **External Scripts** | None | Zero `<script>` tags |
 | **Build Tools** | None | Plain file editing |
 
-> **Note:** A `prepros.config` file exists for users who want to use **Prepros** to live-reload while editing — it's optional.
-
 ---
 
 ## 🏗 Architecture
