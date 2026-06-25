@@ -14,16 +14,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- Animate.css — entry animations (fade / slide / zoom only) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
 
   <!-- ========== HEADER ========== -->
   <header class="site-header">
     <nav class="main-nav">
-      <a href="#home" class="logo">
+      <a href="#home" class="logo animate__animated animate__fadeInLeft">
         <img src="assets/images/logo.png" alt="Onix Digital">
       </a>
-      <ul class="nav">
+      <ul class="nav animate__animated animate__fadeInDown">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
@@ -43,7 +46,7 @@
   <section id="home" class="main-banner">
     <!-- Decorative left "baner-dec-left.png" image (267x532) -->
     <span class="banner-decor-left" aria-hidden="true"></span>
-    <div class="hero-image">
+    <div class="hero-image animate__animated animate__fadeInRight">
           <img src="assets/images/banner-right-image.png" alt="Digital marketing illustration">
         </div>
 
@@ -51,10 +54,10 @@
       <div class="hero-grid">
 
         <div class="hero-text">
-          <h6>Welcome to Onix Digital</h6>
-          <h2>Build <em class="blue">your website </em> the best in <em> SEO</em></h2>
-          <p>This is a professional looking HTML Bootstrap 5 website template brought to you by TemplateMo website.</p>
-          <div class="down-buttons">
+          <h6 class="animate__animated animate__fadeInDown">Welcome to Onix Digital</h6>
+          <h2 class="animate__animated animate__fadeInDown">Build <em class="blue">your website </em> the best in <em> SEO</em></h2>
+          <p class="animate__animated animate__fadeInUp">This is a professional looking HTML Bootstrap 5 website template brought to you by TemplateMo website.</p>
+          <div class="down-buttons animate__animated animate__zoomIn">
             <div class="main-blue-button-hover">
               <a href="#videos">Watch Videos</a>
             </div>
@@ -91,7 +94,7 @@
     </div>
 
     <div class="container">
-      <div class="section-heading">
+      <div class="section-heading animate__animated animate__fadeInUp">
         <h6>Our Services</h6>
         <h2>We <em>Provide</em> The Best Service With <em>Our Tools</em></h2>
       </div>
@@ -144,7 +147,7 @@
         </div>
 
         <div class="about-text">
-          <div class="section-heading left">
+          <div class="section-heading left animate__animated animate__fadeInUp">
             <h6>About Us</h6>
             <h2>Grow Your Website With Our <em>SEO Tools</em> &amp; Project Management</h2>
           </div>
@@ -182,7 +185,7 @@
     <img src="assets/images/portfolio-left-dec.png" alt="" class="portfolio-decor" aria-hidden="true">
 
     <div class="container">
-      <div class="section-heading">
+      <div class="section-heading animate__animated animate__fadeInUp">
         <h6>Case Studies For Clients</h6>
         <h2>Our Recent <em>Projects</em> &amp; Case Studies <em>For Clients</em></h2>
       </div>
@@ -267,7 +270,7 @@
     <img src="assets/images/tables-left-dec.png" alt="" class="pricing-decor" aria-hidden="true">
 
     <div class="container">
-      <div class="section-heading">
+      <div class="section-heading animate__animated animate__fadeInUp">
         <h6>Suitable Plans</h6>
         <h2>Select A Suitable <em>Plan</em> For Your Best <em>Projects</em></h2>
       </div>
@@ -351,7 +354,7 @@
     </div>
 
     <div class="container">
-      <div class="section-heading left">
+      <div class="section-heading left animate__animated animate__fadeInUp">
         <h6>OUR VIDEOS</h6>
         <h2>Watch our <em class="blue">videos</em> for our <em>projects</em></h2>
       </div>
@@ -426,7 +429,7 @@
     </div>
 
     <div class="container">
-      <div class="section-heading">
+      <div class="section-heading animate__animated animate__fadeInUp">
         <h6>CONTACT US</h6>
         <h2>Feel Free to <em>Contact</em> Us Via The <em>HTML Form</em></h2>
       </div>
@@ -467,7 +470,7 @@
           </div>
         </div>
 
-        <form id="contact" class="contact-form" action="#" method="post">
+        <form id="contact" class="contact-form animate__animated animate__fadeInUp" action="#" method="post">
           <input type="text" placeholder="Surname" aria-label="Surname" required>
           <input type="email" placeholder="Your Email" aria-label="Your Email" required>
           <input type="url" placeholder="Your Website URL" aria-label="Your Website URL">
@@ -477,12 +480,81 @@
     </div>
   </section>
 
+  <!-- ========== CRUD RECORDS (.crud-section) ========== -->
+  <section id="crud-records" class="crud-section">
+
+    <!-- CRUD decorations — purely visual, no semantic content -->
+    <div class="crud-dec-left-top" aria-hidden="true">
+      <img src="assets/images/services-left-dec.png" alt="" loading="lazy">
+    </div>
+
+    <div class="crud-dec-right-bottom" aria-hidden="true">
+      <img src="assets/images/services-right-dec.png" alt="" loading="lazy">
+    </div>
+
+    <div class="crud-dec-left-mid" aria-hidden="true">
+      <img src="assets/images/tables-left-dec.png" alt="" loading="lazy">
+    </div>
+
+    <div class="crud-dec-corner" aria-hidden="true">
+      <img src="assets/images/subscribe-dec.png" alt="" loading="lazy">
+    </div>
+
+    <div class="container">
+
+      <!-- ===== Part 1 — Submission Form ===== -->
+      <div class="section-heading animate__animated animate__fadeInUp">
+        <h6>Manage</h6>
+        <h2>Submit Your <em>Details</em></h2>
+      </div>
+
+      <form id="crud-form" class="crud-form-card animate__animated animate__fadeInLeft" action="#" method="post" onsubmit="return false;">
+        <input type="text"  id="crud-sno"   placeholder="e.g. 01"        aria-label="S.No">
+        <input type="text"  id="crud-name"  placeholder="Full Name"      aria-label="Name">
+        <input type="email" id="crud-email" placeholder="Email Address"  aria-label="Email">
+        <button type="button" onclick="submitRecord()">Submit Record</button>
+      </form>
+
+      <!-- ===== Part 2 — Records Table ===== -->
+      <div class="section-heading crud-heading-table animate__animated animate__fadeInUp">
+        <h6>Submitted</h6>
+        <h2>Records <em>Overview</em></h2>
+      </div>
+
+      <div class="records-wrapper animate__animated animate__fadeInRight">
+        <table class="records-table">
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th class="actions-col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="records-tbody" data-count="0">
+            <tr class="empty-state-row" id="empty-state-row">
+              <td colspan="4" style="
+                text-align: center;
+                padding: 40px 20px;
+                color: #afafaf;
+                font-size: 15px;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 400;
+              ">No records yet. Fill in the form above and click Submit Record.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ========== FOOTER (LIGHT, 4 columns) ========== -->
 
   <!-- footer-dec.png ABOVE the footer -->
   <img src="assets/images/footer-dec.png" alt="" class="footer-decor" aria-hidden="true">
 
-  <footer class="site-footer">
+  <footer class="site-footer animate__animated animate__fadeInUp">
     <div class="container">
       <div class="footer-grid">
 
@@ -548,6 +620,229 @@
       </div>
     </div>
   </footer>
+
+  <!-- ========== CRUD SECTION — MINIMAL JS ONLY ========== -->
+  <script>
+    function toggleEdit(n) {
+      var editRow   = document.getElementById('edit-row-' + n);
+      var recordRow = document.getElementById('record-row-' + n);
+      var editBtn   = recordRow.querySelector('.edit-btn');
+
+      var isVisible = editRow.style.display === 'table-row';
+      if (isVisible) {
+        editRow.style.display = 'none';
+        editBtn.style.background = '';
+        editBtn.textContent = 'Edit';
+      } else {
+        editRow.style.display = 'table-row';
+        editBtn.style.background = 'var(--red)';
+        editBtn.textContent = 'Editing\u2026';
+      }
+    }
+
+    function saveEdit(n) {
+      var newSno   = document.getElementById('edit-sno-'   + n).value.trim();
+      var newName  = document.getElementById('edit-name-'  + n).value.trim();
+      var newEmail = document.getElementById('edit-email-' + n).value.trim();
+
+      if (!newSno || !newName || !newEmail) {
+        alert('All fields are required to save.');
+        return;
+      }
+
+      var recordRow = document.getElementById('record-row-' + n);
+      var cells = recordRow.querySelectorAll('td');
+      cells[0].textContent = newSno;
+      cells[1].textContent = newName;
+      cells[2].textContent = newEmail;
+
+      document.getElementById('edit-row-' + n).style.display = 'none';
+      var editBtn = recordRow.querySelector('.edit-btn');
+      editBtn.style.background = '';
+      editBtn.textContent = 'Edit';
+    }
+
+    function cancelEdit(n) {
+      var editRow   = document.getElementById('edit-row-'   + n);
+      var recordRow = document.getElementById('record-row-' + n);
+      var cells     = recordRow.querySelectorAll('td');
+
+      document.getElementById('edit-sno-'   + n).value = cells[0].textContent;
+      document.getElementById('edit-name-'  + n).value = cells[1].textContent;
+      document.getElementById('edit-email-' + n).value = cells[2].textContent;
+
+      editRow.style.display = 'none';
+      var editBtn = recordRow.querySelector('.edit-btn');
+      editBtn.style.background = '';
+      editBtn.textContent = 'Edit';
+    }
+
+    function deleteRecord(n) {
+      var recordRow = document.getElementById('record-row-' + n);
+      var editRow   = document.getElementById('edit-row-'   + n);
+
+      recordRow.style.opacity = '0';
+      recordRow.style.transition = 'opacity 0.3s ease';
+
+      setTimeout(function() {
+        if (recordRow) recordRow.remove();
+        if (editRow)   editRow.remove();
+        var tbody = document.getElementById('records-tbody');
+        var remainingRows = tbody.querySelectorAll('.record-row');
+        if (remainingRows.length === 0) {
+          var emptyRow = document.getElementById('empty-state-row');
+          if (emptyRow) emptyRow.style.display = '';
+        }
+      }, 300);
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+    }
+
+    function submitRecord() {
+      var emptyRow = document.getElementById('empty-state-row');
+      if (emptyRow) emptyRow.style.display = 'none';
+
+      var snoInput   = document.getElementById('crud-sno');
+      var nameInput  = document.getElementById('crud-name');
+      var emailInput = document.getElementById('crud-email');
+
+      [snoInput, nameInput, emailInput].forEach(function(inp) {
+        inp.classList.remove('input-error');
+      });
+
+      var sno   = snoInput.value.trim();
+      var name  = nameInput.value.trim();
+      var email = emailInput.value.trim();
+
+      var hasError = false;
+      if (!sno)   { snoInput.classList.add('input-error');   hasError = true; }
+      if (!name)  { nameInput.classList.add('input-error');  hasError = true; }
+      if (!email) { emailInput.classList.add('input-error'); hasError = true; }
+      if (hasError) return;
+
+      var tbody = document.getElementById('records-tbody');
+      var count = parseInt(tbody.dataset.count || '3', 10) + 1;
+      tbody.dataset.count = count;
+
+      var recordRow = document.createElement('tr');
+      recordRow.className = 'record-row';
+      recordRow.id = 'record-row-' + count;
+      recordRow.innerHTML =
+        '<td data-label="S.No">'    + escapeHtml(sno)   + '</td>' +
+        '<td data-label="Name">'    + escapeHtml(name)  + '</td>' +
+        '<td data-label="Email">'   + escapeHtml(email) + '</td>' +
+        '<td data-label="Actions" class="actions-cell">' +
+          '<button class="action-btn edit-btn"   ' +
+                  'onclick="toggleEdit('  + count + ')">Edit</button>' +
+          '<button class="action-btn delete-btn" ' +
+                  'onclick="deleteRecord(' + count + ')">Delete</button>' +
+        '</td>';
+
+      var editRow = document.createElement('tr');
+      editRow.className = 'edit-row';
+      editRow.id = 'edit-row-' + count;
+      editRow.style.display = 'none';
+      editRow.innerHTML =
+        '<td colspan="4">' +
+          '<div class="edit-inline-form">' +
+            '<input type="text"  id="edit-sno-'   + count + '" ' +
+                   'value="' + escapeHtml(sno)   + '" placeholder="S.No">' +
+            '<input type="text"  id="edit-name-'  + count + '" ' +
+                   'value="' + escapeHtml(name)  + '" placeholder="Name">' +
+            '<input type="email" id="edit-email-' + count + '" ' +
+                   'value="' + escapeHtml(email) + '" placeholder="Email">' +
+            '<button class="action-btn save-btn"   ' +
+                    'onclick="saveEdit('   + count + ')">Save</button>' +
+            '<button class="action-btn cancel-btn" ' +
+                    'onclick="cancelEdit(' + count + ')">Cancel</button>' +
+          '</div>' +
+        '</td>';
+
+      tbody.appendChild(recordRow);
+      tbody.appendChild(editRow);
+
+      snoInput.value   = '';
+      nameInput.value  = '';
+      emailInput.value = '';
+
+      recordRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
+
+  <!-- ScrollReveal — scroll-based reveal animations for elements not pre-animated by Animate.css -->
+  <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+  <script>
+    /* Respect user motion preferences — disable ScrollReveal and strip Animate.css classes if reduced motion is requested */
+    (function () {
+      var prefersReduced = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefersReduced) {
+        /* Remove any Animate.css classes that would otherwise auto-play on load */
+        document.querySelectorAll('[class*="animate__"]').forEach(function (el) {
+          el.classList.forEach(function (cls) {
+            if (cls.indexOf('animate__') === 0) el.classList.remove(cls);
+          });
+        });
+        return; /* Do not initialise ScrollReveal at all */
+      }
+
+      /* Single shared ScrollReveal instance — fade / slide only, no flips / bounces / rotations */
+      var sr = ScrollReveal({
+        distance: '60px',
+        duration: 1200,
+        delay: 200,
+        reset: false,
+        easing: 'ease'
+      });
+
+      /* --- Hero ---------------------------------------------------------- */
+      sr.reveal('.hero-text h6, .hero-text h2',   { origin: 'left',  duration: 1000 });
+      sr.reveal('.hero-text p',                   { origin: 'left',  delay: 300 });
+      sr.reveal('.hero-text .down-buttons',       { origin: 'left',  delay: 400 });
+      sr.reveal('.banner-decor-left',             { origin: 'left',  distance: '40px', duration: 1500 });
+
+      /* --- Services ------------------------------------------------------ */
+      sr.reveal('.service-card', {
+        origin: 'bottom',
+        interval: 150
+      });
+
+      /* --- About --------------------------------------------------------- */
+      sr.reveal('.about-image', { origin: 'left' });
+      sr.reveal('.about-text',  { origin: 'right' });
+
+      /* --- Portfolio / Pricing ------------------------------------------- */
+      sr.reveal('.pricing-item', {
+        origin: 'bottom',
+        interval: 200
+      });
+
+      /* --- Subscribe ----------------------------------------------------- */
+      sr.reveal('.subscribe-inner', { origin: 'top' });
+
+      /* --- Videos -------------------------------------------------------- */
+      sr.reveal('.videos-main', { origin: 'left' });
+      sr.reveal('.video-item',  { origin: 'right', interval: 150 });
+
+      /* --- Contact ------------------------------------------------------- */
+      sr.reveal('.contact-form', { origin: 'bottom' });
+      sr.reveal('.contact-map, .contact-info', { origin: 'bottom', interval: 150 });
+
+      /* --- CRUD ---------------------------------------------------------- */
+      sr.reveal('.crud-form-card',  { origin: 'left' });
+      sr.reveal('.records-wrapper', { origin: 'right' });
+
+      /* --- Footer -------------------------------------------------------- */
+      sr.reveal('.site-footer', { origin: 'bottom' });
+    })();
+  </script>
 
 </body>
 </html>

@@ -38,6 +38,18 @@ ul { list-style: none; }
 h1, h2, h3, h4, h5, h6 { margin: 0; }
 p { font-size: 15px; line-height: 30px; color: var(--text); }
 
+/* ---------- A11Y: Respect reduced-motion preference ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .animate__animated {
+    animation: none !important;
+  }
+}
+
 /* ---------- LAYOUT PRIMITIVES ---------- */
 .container {
   width: 100%;
@@ -188,7 +200,6 @@ a.btn-red,
 .banner-decor-left {
   position: absolute;
   left: 0;
-  top: 100px;
   width: 267px;
   height: 532px;
   background-image: url(assets/images/baner-dec-left.png);
@@ -905,7 +916,7 @@ a.btn-red,
 
 /* Form with bg image, no borders, underline style */
 .contact-form {
-  margin-left: -100px;
+  margin-left: 0;
   position: relative;
   z-index: 2;
   background-image: url(assets/images/contact-form-bg.png);
@@ -1087,6 +1098,270 @@ a.btn-red,
 }
 .copyright p a { color: var(--red); }
 
+/* ---------- CRUD RECORDS (.crud-section) ---------- */
+.crud-section {
+  background-color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ----- Decorative watermarks / accents ----- */
+.crud-dec-left-top {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.7;
+}
+.crud-dec-left-top img {
+  max-width: 220px;
+  display: block;
+}
+
+.crud-dec-right-bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.7;
+}
+.crud-dec-right-bottom img {
+  max-width: 220px;
+  display: block;
+}
+
+.crud-dec-left-mid {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.5;
+}
+.crud-dec-left-mid img {
+  max-width: 200px;
+  display: block;
+}
+
+.crud-dec-corner {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.85;
+}
+.crud-dec-corner img {
+  width: 195px;
+  height: 138px;
+  display: block;
+}
+
+/* Ensure the container and all content sit ABOVE the decorations */
+.crud-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ----- Submission form card (mirrors .contact-form aesthetics) ----- */
+.crud-form-card {
+  background: var(--white);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 60px;
+  max-width: 700px;
+  margin: 0 auto;
+  display: grid;
+  gap: 0;
+  position: relative;
+  z-index: 2;
+}
+.crud-form-card input {
+  width: 100%;
+  height: 46px;
+  border-radius: 0;
+  background-color: transparent;
+  border-bottom: 1px solid #9bdbf8;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text);
+  padding: 0;
+  margin-bottom: 35px;
+  font-family: inherit;
+}
+.crud-form-card input::placeholder {
+  color: var(--muted);
+}
+/* Validation error state (toggled by JS) */
+.crud-form-card input.input-error {
+  border-bottom-color: var(--red) !important;
+}
+.crud-form-card button {
+  display: inline-block;
+  background-color: var(--blue);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--white);
+  text-transform: capitalize;
+  padding: 12px 25px;
+  border-radius: 23px;
+  letter-spacing: 0.25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+  justify-self: start;
+  line-height: 1.4;
+}
+.crud-form-card button:hover {
+  background-color: var(--red);
+}
+
+/* Spacing between the two section headings inside the same section */
+.crud-heading-table {
+  margin-top: 80px;
+}
+
+/* ----- Records table wrapper ----- */
+.records-wrapper {
+  background: var(--bg-soft);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  margin-top: 60px;
+  max-width: 900px;
+  margin-inline: auto;
+}
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.records-table thead tr {
+  background: var(--blue);
+}
+.records-table thead th {
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 14px 20px;
+  text-align: left;
+}
+.records-table thead th:first-child {
+  border-radius: 20px 0 0 20px;
+}
+.records-table thead th:last-child {
+  border-radius: 0 20px 20px 0;
+}
+.records-table .actions-col {
+  text-align: center;
+}
+.records-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+  color: var(--text);
+}
+.records-table tbody td {
+  padding: 16px 20px;
+  vertical-align: middle;
+}
+.record-row:nth-child(even) {
+  background: var(--bg-light);
+}
+
+/* Action cells use grid for side-by-side buttons */
+.actions-cell {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Edit / Delete / Save buttons */
+.action-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--white);
+  text-transform: capitalize;
+  border-radius: 23px;
+  letter-spacing: 0.25px;
+  cursor: pointer;
+  line-height: 1.4;
+  text-align: center;
+  user-select: none;
+  font-family: inherit;
+  border: none;
+}
+.edit-btn {
+  background-color: var(--blue);
+}
+.edit-btn:hover {
+  background-color: var(--red);
+}
+.delete-btn {
+  background-color: var(--red);
+}
+.delete-btn:hover {
+  background-color: var(--blue);
+}
+.save-btn {
+  background-color: var(--blue);
+}
+.save-btn:hover {
+  background-color: var(--red);
+}
+.cancel-btn {
+  background-color: var(--muted);
+}
+.cancel-btn:hover {
+  background-color: var(--text);
+}
+
+/* ----- Edit row (hidden by default, shown via JS toggleEdit) ----- */
+.edit-row {
+  display: none;
+  background: var(--bg-soft);
+}
+.edit-row td {
+  padding: 12px 20px;
+}
+
+/* Inline edit form layout */
+.edit-inline-form {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr auto auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--bg-soft);
+}
+.edit-inline-form input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #9bdbf8;
+  outline: none;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  padding: 0 4px;
+}
+.edit-inline-form input::placeholder {
+  color: var(--muted);
+}
+
 /* ---------- RESPONSIVE ---------- */
 /* ---------- LARGE / ULTRA-WIDE SCREENS (>= 1953px) ---------- */
 @media (min-width: 2340px) {
@@ -1216,6 +1491,20 @@ a.btn-red,
   .hover-effect { right: 24px; width: 200px; height: 170px; }
   .hover-effect h4 { font-size: 16px; }
   .contact-form .form-row { grid-template-columns: 1fr; }
+
+  /* CRUD section responsive overrides */
+  .records-table thead { display: none; }
+  .records-table tr { display: block; border: 1px solid var(--border); border-radius: 20px; margin-bottom: 20px; padding: 16px; }
+  .records-table td { display: block; text-align: right; font-size: 14px; padding: 8px 12px; position: relative; }
+  .records-table td::before { content: attr(data-label); position: absolute; left: 12px; font-weight: 600; color: var(--muted); }
+  .crud-form-card { padding: 30px 20px; }
+  .edit-inline-form { grid-template-columns: 1fr; gap: 12px; }
+
+  /* CRUD decoration responsive overrides */
+  .crud-dec-left-mid,
+  .crud-dec-corner { display: none; }
+  .crud-dec-left-top img,
+  .crud-dec-right-bottom img { max-width: 140px; }
 }
 
 @media (max-width: 480px) {
@@ -1229,4 +1518,11 @@ a.btn-red,
   .carousel { padding: 0 40px; }
   .hover-effect { display: none; }
   .main-video-area iframe { height: 240px; }
+
+  /* CRUD section small-screen heading */
+  .crud-section .section-heading h2 { font-size: 22px; line-height: 32px; margin: 0; }
+
+  /* Hide the remaining CRUD corner watermarks on very small screens */
+  .crud-dec-left-top,
+  .crud-dec-right-bottom { display: none; }
 }
