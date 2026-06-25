@@ -716,3 +716,5 @@ The template was originally inherited and went through a comprehensive audit. Th
 ---
 
 **Built with ❤️ — pure HTML + CSS, a tiny focused JS layer for CRUD, and elegant scroll animations.**
+
+**Deplyed Link:- https://abhinav2896.github.io/Onix-Digital**
